@@ -1,6 +1,6 @@
 <div align="center" id="madewithlua">
   <img
-    src="https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/media/branch/master/png/gruvbox-dark-blue.png"
+    src="https://search.nixos.org/images/nix-logo.png"
     width="300",
     height="350"
   />
