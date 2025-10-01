@@ -26,7 +26,7 @@
   networking.networkmanager.enable = true;
 
 
-  
+  programs.zsh.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -48,6 +48,11 @@
   programs.hyprland.enable = true;
   
 
+
+
+  #-------------Enable TLP ----------------------
+  services.power-profiles-daemon.enable = false;
+  services.tlp.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -82,6 +87,11 @@
     isNormalUser = true;
     description = "Milkyway";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+
+    #  thunderbird
+    ];
+    shell =pkgs.zsh;
   };
 
   # Install firefox.
