@@ -102,7 +102,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
+  virtualisation.docker.enable = true;
+	
   programs.nix-ld.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -113,7 +114,18 @@
   # };
 
   # List services that you want to enable:
+   
+  services.xserver.videoDrivers = [ "nvidia" ];
 
+  hardware.graphics.enable = true;
+
+  hardware.nvidia = {
+	  modesetting.enable = true;
+	  package = config.boot.kernelPackages.nvidiaPackages.stable;
+	  open = true;
+  };
+
+ 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 

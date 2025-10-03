@@ -12,6 +12,7 @@ in
      fastfetch
      ffmpeg
      git
+     ani-cli
    # Dependencies
      gettext
      ghostscript_headless
@@ -22,8 +23,9 @@ in
      fd
      lazygit
      fzf
+     dotnet-ef
      qt6.qtmultimedia
-
+     rocmPackages.llvm.clang-tools
    # Language Compilers/Tools/Runtimes
      dotnet-sdk
      dotnet-runtime 
@@ -32,6 +34,8 @@ in
      lua
      luarocks
      rustup
+     python3
+     python3Packages.pip
    # System Level Applications
      (unstable.ayugram-desktop)
      home-manager
