@@ -115,17 +115,26 @@
 
   # List services that you want to enable:
    
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
 
   hardware.graphics.enable = true;
+  hardware.opengl.extraPackages = with pkgs; [ mesa ];
 
   hardware.nvidia = {
 	  modesetting.enable = true;
 	  package = config.boot.kernelPackages.nvidiaPackages.stable;
 	  open = true;
+
+	  prime = {
+		  offload = {
+			  enable = true;
+			  enableOffloadCmd = true; # gives you `prime-run`
+		  };
+		  amdgpuBusId = "PCI:6:0:0";
+		  nvidiaBusId = "PCI:1:0:0";
+	  };
   };
 
- 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
